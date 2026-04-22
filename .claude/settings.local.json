@@ -26,7 +26,10 @@
       "PowerShell($body = '{\"name\":\"Test\",\"email\":\"test@test.it\",\"phone\":\"333\",\"service\":\"Igiene\",\"message\":\"Test messaggio\"}'; $resp = Invoke-WebRequest -Uri \"http://cleardent-backend.test/api/contact\" -Method Post -Body $body -ContentType \"application/json\" -ErrorAction SilentlyContinue; $resp.StatusCode; $resp.Content)",
       "Bash(curl *)",
       "WebSearch",
-      "WebFetch(domain:www.pexels.com)"
+      "WebFetch(domain:www.pexels.com)",
+      "Bash(php artisan *)",
+      "Bash(\"C:/Users/agost/AppData/Roaming/herd-lite/bin/php.bat\" artisan *)",
+      "Bash(/c/Users/agost/.config/herd/bin/php84/php.exe artisan *)"
     ]
   }
 }
