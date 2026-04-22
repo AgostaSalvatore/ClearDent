@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create *)",
+      "Bash(composer create-project *)",
+      "Bash(npm install *)",
+      "PowerShell(composer *)",
+      "Bash(npx tailwindcss *)",
+      "Bash(rm /e/Dev/ClearDent/ClearDent-Frontend/src/App.css)",
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:5173)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8000/up)",
+      "PowerShell(netstat *)",
+      "PowerShell(cd \"E:\\\\Dev\\\\ClearDent\\\\ClearDent-Backend\"; php artisan serve --port=8002 --timeout=5 2>&1; echo \"EXIT: $LASTEXITCODE\")",
+      "PowerShell(Get-Content *)",
+      "PowerShell(Out-Null *)",
+      "PowerShell(Get-Job *)",
+      "PowerShell(mysql *)",
+      "Read(//c/Users/agost/.config/herd/config/**)",
+      "Read(//c/Users/agost/.config/herd/**)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(json.dumps\\({k:v for k,v in d.items\\(\\) if 'db' in k.lower\\(\\) or 'sql' in k.lower\\(\\) or 'pass' in k.lower\\(\\)}, indent=2\\)\\)\")",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(json.dumps\\(d, indent=2\\)\\)\")",
+      "PowerShell(herd *)",
+      "PowerShell(Invoke-RestMethod -Uri \"http://cleardent-backend.test/up\" -Method Get 2>&1)",
+      "PowerShell($body = @{ name=\"Test\"; email=\"test@test.it\"; phone=\"333000\"; service=\"Igiene\"; message=\"Test dal terminale\" } | ConvertTo-Json; try { $r = Invoke-RestMethod -Uri \"http://cleardent-backend.test/api/contact\" -Method Post -Body $body -ContentType \"application/json\"; $r } catch { $_.Exception.Response.StatusCode; $_.ErrorDetails.Message })",
+      "PowerShell($body = '{\"name\":\"Test\",\"email\":\"test@test.it\",\"phone\":\"333\",\"service\":\"Igiene\",\"message\":\"Test messaggio\"}'; $resp = Invoke-WebRequest -Uri \"http://cleardent-backend.test/api/contact\" -Method Post -Body $body -ContentType \"application/json\" -ErrorAction SilentlyContinue; $resp.StatusCode; $resp.Content)",
+      "Bash(curl *)"
+    ]
+  }
+}
