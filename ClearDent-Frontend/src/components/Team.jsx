@@ -1,3 +1,5 @@
+import Reveal from './Reveal'
+
 const team = [
   {
     name: 'Dr. Marco Ferretti',
@@ -23,7 +25,7 @@ export default function Team() {
   return (
     <section id="team" className="py-24 bg-navy-600">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
+        <Reveal className="text-center mb-16">
           <p className="text-teal-400 font-semibold uppercase tracking-widest text-sm mb-3">
             I Professionisti
           </p>
@@ -34,29 +36,28 @@ export default function Team() {
             Dentisti altamente qualificati, aggiornati continuamente sulle ultime tecniche e
             tecnologie, pronti a prendersi cura del tuo sorriso.
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {team.map((member) => (
-            <div
-              key={member.name}
-              className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-300 group"
-            >
-              <div className="h-72 overflow-hidden">
-                <img
-                  src={member.img}
-                  alt={member.name}
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                />
+          {team.map((member, i) => (
+            <Reveal key={member.name} delay={i * 120} direction="up">
+              <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-300 group h-full">
+                <div className="h-72 overflow-hidden">
+                  <img
+                    src={member.img}
+                    alt={member.name}
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-serif text-xl font-semibold text-white mb-1">
+                    {member.name}
+                  </h3>
+                  <p className="text-teal-400 text-sm font-medium mb-3">{member.role}</p>
+                  <p className="text-white/60 text-sm leading-relaxed">{member.desc}</p>
+                </div>
               </div>
-              <div className="p-6">
-                <h3 className="font-serif text-xl font-semibold text-white mb-1">
-                  {member.name}
-                </h3>
-                <p className="text-teal-400 text-sm font-medium mb-3">{member.role}</p>
-                <p className="text-white/60 text-sm leading-relaxed">{member.desc}</p>
-              </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

@@ -4,7 +4,6 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
@@ -12,27 +11,38 @@ export default function Hero() {
             'url(https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=1920&q=80)',
         }}
       />
-      {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-navy-800/90 via-navy-700/75 to-navy-600/50" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <p className="text-teal-400 font-semibold uppercase tracking-widest text-sm mb-4">
+          <p
+            className="text-teal-400 font-semibold uppercase tracking-widest text-sm mb-4 opacity-0 animate-fade-up"
+            style={{ animationDelay: '100ms' }}
+          >
             Studio Dentistico Professionale
           </p>
-          <h1 className="font-serif text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+          <h1
+            className="font-serif text-4xl md:text-6xl font-bold text-white leading-tight mb-6 opacity-0 animate-fade-up"
+            style={{ animationDelay: '250ms' }}
+          >
             Il Sorriso Che
             <br />
             <span className="text-teal-400">Hai Sempre</span>
             <br />
             Sognato
           </h1>
-          <p className="text-white/80 text-lg mb-8 leading-relaxed max-w-lg">
+          <p
+            className="text-white/80 text-lg mb-8 leading-relaxed max-w-lg opacity-0 animate-fade-up"
+            style={{ animationDelay: '400ms' }}
+          >
             Benvenuti in ClearDent, dove la cura orale incontra l&apos;eccellenza.
             Offriamo trattamenti all&apos;avanguardia in un ambiente confortevole e
             accogliente.
           </p>
-          <div className="flex flex-wrap gap-4">
+          <div
+            className="flex flex-wrap gap-4 opacity-0 animate-fade-up"
+            style={{ animationDelay: '550ms' }}
+          >
             <a href="#contatti" className="btn-primary">
               Prenota una Visita
             </a>
@@ -41,8 +51,10 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* Stats */}
-          <div className="mt-12 flex gap-10">
+          <div
+            className="mt-12 flex gap-10 opacity-0 animate-fade-up"
+            style={{ animationDelay: '700ms' }}
+          >
             {[
               { value: '15+', label: 'Anni di Esperienza' },
               { value: '5.000+', label: 'Pazienti Soddisfatti' },
@@ -56,8 +68,10 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Hero card */}
-        <div className="hidden md:block">
+        <div
+          className="hidden md:block opacity-0 animate-fade-up"
+          style={{ animationDelay: '400ms' }}
+        >
           <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-white">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 bg-teal-500 rounded-full flex items-center justify-center">
@@ -87,10 +101,10 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
       <a
         href="#chi-siamo"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/60 hover:text-white transition-colors animate-bounce"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/60 hover:text-white transition-colors animate-bounce opacity-0 animate-fade-in"
+        style={{ animationDelay: '1000ms' }}
         aria-label="Scorri in basso"
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
