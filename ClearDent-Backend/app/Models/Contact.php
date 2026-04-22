@@ -8,7 +8,7 @@ class Contact extends Model
 {
     protected $fillable = ['user_id', 'name', 'email', 'phone', 'service', 'message', 'status', 'notes'];
 
-    public function user()
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(User::class);
     }

@@ -29,7 +29,11 @@
       "WebFetch(domain:www.pexels.com)",
       "Bash(php artisan *)",
       "Bash(\"C:/Users/agost/AppData/Roaming/herd-lite/bin/php.bat\" artisan *)",
-      "Bash(/c/Users/agost/.config/herd/bin/php84/php.exe artisan *)"
+      "Bash(/c/Users/agost/.config/herd/bin/php84/php.exe artisan *)",
+      "Bash(/c/Users/agost/.config/herd/bin/php84/php.exe composer *)",
+      "Bash(/c/Users/agost/.config/herd/bin/php84/php.exe /c/Users/agost/.config/herd/bin/composer.phar require --dev phpstan/phpstan larastan/larastan)",
+      "Bash(/c/Users/agost/.config/herd/bin/php84/php.exe vendor/bin/phpstan analyse)",
+      "Bash(/c/Users/agost/.config/herd/bin/php84/php.exe -d memory_limit=512M vendor/bin/phpstan analyse)"
     ]
   }
 }
