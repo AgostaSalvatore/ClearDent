@@ -2,8 +2,8 @@ import Reveal from './Reveal'
 
 const photos = [
   {
-    src: 'https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=600&q=80',
-    alt: 'Sala operatoria',
+    src: 'https://images.pexels.com/photos/33812025/pexels-photo-33812025.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80',
+    alt: 'Sala d\'attesa dello studio',
     span: 'col-span-2 row-span-2',
   },
   {
@@ -12,13 +12,13 @@ const photos = [
     span: '',
   },
   {
-    src: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=400&q=80',
-    alt: 'Strumenti professionali',
+    src: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=400&q=80',
+    alt: 'Sala operatoria moderna',
     span: '',
   },
   {
-    src: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&q=80',
-    alt: 'Reception dello studio',
+    src: 'https://images.unsplash.com/photo-1579684453423-f84349ef60b0?w=400&q=80',
+    alt: 'Attrezzatura diagnostica',
     span: '',
   },
   {

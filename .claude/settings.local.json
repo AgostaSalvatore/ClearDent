@@ -24,7 +24,9 @@
       "PowerShell(Invoke-RestMethod -Uri \"http://cleardent-backend.test/up\" -Method Get 2>&1)",
       "PowerShell($body = @{ name=\"Test\"; email=\"test@test.it\"; phone=\"333000\"; service=\"Igiene\"; message=\"Test dal terminale\" } | ConvertTo-Json; try { $r = Invoke-RestMethod -Uri \"http://cleardent-backend.test/api/contact\" -Method Post -Body $body -ContentType \"application/json\"; $r } catch { $_.Exception.Response.StatusCode; $_.ErrorDetails.Message })",
       "PowerShell($body = '{\"name\":\"Test\",\"email\":\"test@test.it\",\"phone\":\"333\",\"service\":\"Igiene\",\"message\":\"Test messaggio\"}'; $resp = Invoke-WebRequest -Uri \"http://cleardent-backend.test/api/contact\" -Method Post -Body $body -ContentType \"application/json\" -ErrorAction SilentlyContinue; $resp.StatusCode; $resp.Content)",
-      "Bash(curl *)"
+      "Bash(curl *)",
+      "WebSearch",
+      "WebFetch(domain:www.pexels.com)"
     ]
   }
 }
