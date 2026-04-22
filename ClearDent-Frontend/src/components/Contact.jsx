@@ -29,10 +29,10 @@ export default function Contact() {
   return (
     <section id="contatti" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-16 items-stretch">
           {/* Info — slide from left */}
-          <Reveal direction="left" duration={800}>
-            <div>
+          <Reveal direction="left" duration={800} className="h-full">
+            <div className="flex flex-col h-full">
               <p className="section-subtitle">Siamo qui per te</p>
               <h2 className="section-title">Contattaci</h2>
               <p className="text-gray-500 leading-relaxed mb-10">
@@ -83,6 +83,32 @@ export default function Contact() {
                     </div>
                   </div>
                 ))}
+              </div>
+
+              <div className="mt-auto pt-8">
+              <div className="rounded-2xl overflow-hidden border border-gray-100 shadow-sm h-52">
+                <iframe
+                  title="ClearDent - Via Roma 45, Milano"
+                  src="https://maps.google.com/maps?q=Via+Roma+45,+20121+Milano,+Italy&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                />
+              </div>
+
+              <a
+                href="https://www.google.com/maps/place/Via+Roma,+45,+20121+Milano+MI"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 flex items-center justify-center gap-2 bg-teal-500 hover:bg-teal-600 text-white font-semibold px-6 py-3 rounded-xl transition-colors"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                Vieni a trovarci
+              </a>
               </div>
             </div>
           </Reveal>
@@ -176,6 +202,7 @@ export default function Contact() {
             </div>
           </Reveal>
         </div>
+
       </div>
     </section>
   )
