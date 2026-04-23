@@ -33,7 +33,12 @@
       "Bash(/c/Users/agost/.config/herd/bin/php84/php.exe composer *)",
       "Bash(/c/Users/agost/.config/herd/bin/php84/php.exe /c/Users/agost/.config/herd/bin/composer.phar require --dev phpstan/phpstan larastan/larastan)",
       "Bash(/c/Users/agost/.config/herd/bin/php84/php.exe vendor/bin/phpstan analyse)",
-      "Bash(/c/Users/agost/.config/herd/bin/php84/php.exe -d memory_limit=512M vendor/bin/phpstan analyse)"
+      "Bash(/c/Users/agost/.config/herd/bin/php84/php.exe -d memory_limit=512M vendor/bin/phpstan analyse)",
+      "Bash(/c/Users/agost/.config/herd/bin/php84/php.exe /e/Dev/ClearDent/ClearDent-Backend/artisan tinker --execute=\"DB::statement\\('SET FOREIGN_KEY_CHECKS=0;'\\); DB::table\\('personal_access_tokens'\\)->truncate\\(\\); DB::table\\('contacts'\\)->update\\(['user_id' => null]\\); DB::table\\('users'\\)->truncate\\(\\); DB::statement\\('SET FOREIGN_KEY_CHECKS=1;'\\); echo 'done';\")",
+      "Bash(/c/Users/agost/.config/herd/bin/php84/php.exe /e/Dev/ClearDent/ClearDent-Backend/artisan db:seed --class=OwnerSeeder)",
+      "Bash(/c/Users/agost/.config/herd/bin/php84/php.exe /e/Dev/ClearDent/ClearDent-Backend/artisan tinker --execute=\"echo App\\\\Models\\\\User::first\\(\\)->only\\(['name','email','role']\\);\")",
+      "Bash(/c/Users/agost/.config/herd/bin/php84/php.exe /e/Dev/ClearDent/ClearDent-Backend/artisan tinker --execute=\"dump\\(App\\\\Models\\\\User::first\\(\\)->only\\(['name','email','role']\\)\\);\")",
+      "Bash(/c/Users/agost/.config/herd/bin/php84/php.exe /e/Dev/ClearDent/ClearDent-Backend/artisan migrate)"
     ]
   }
 }

@@ -17,25 +17,25 @@ const photos = [
     span: '',
   },
   {
-    src: 'https://images.unsplash.com/photo-1579684453423-f84349ef60b0?w=400&q=80',
-    alt: 'Attrezzatura diagnostica',
+    src: 'https://images.unsplash.com/photo-1571772996211-2f02c9727629?w=600&q=85',
+    alt: 'Attrezzatura dentale moderna',
     span: '',
   },
   {
-    src: 'https://images.unsplash.com/photo-1638202993928-7267aad84c31?w=400&q=80',
-    alt: 'Tecnologia digitale',
+    src: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=900&q=85',
+    alt: 'Studio dentistico moderno',
     span: 'col-span-2',
   },
 ]
 
 export default function Gallery() {
   return (
-    <section id="galleria" className="py-24 bg-gray-50">
+    <section id="galleria" className="py-24 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-6">
         <Reveal className="text-center mb-16">
           <p className="section-subtitle">La Struttura</p>
           <h2 className="section-title">Il Nostro Studio</h2>
-          <p className="text-gray-500 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
             Un ambiente moderno, confortevole e all&apos;avanguardia, pensato per farti sentire
             a tuo agio durante ogni visita.
           </p>

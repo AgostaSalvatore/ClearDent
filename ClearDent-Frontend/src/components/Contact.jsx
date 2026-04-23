@@ -1,12 +1,19 @@
 import { useState } from 'react'
 import axios from 'axios'
 import Reveal from './Reveal'
+import { useAuth } from '../context/AuthContext'
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000'
 
-const initialForm = { name: '', email: '', phone: '', service: '', message: '' }
-
 export default function Contact() {
+  const { user } = useAuth()
+  const initialForm = {
+    name: user?.name || '',
+    email: user?.email || '',
+    phone: user?.phone || '',
+    service: '',
+    message: '',
+  }
   const [form, setForm] = useState(initialForm)
   const [status, setStatus] = useState(null)
 
@@ -27,7 +34,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contatti" className="py-24 bg-white">
+    <section id="contatti" className="py-24 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-stretch">
           {/* Info — slide from left */}
@@ -35,7 +42,7 @@ export default function Contact() {
             <div className="flex flex-col h-full">
               <p className="section-subtitle">Siamo qui per te</p>
               <h2 className="section-title">Contattaci</h2>
-              <p className="text-gray-500 leading-relaxed mb-10">
+              <p className="text-gray-500 dark:text-gray-400 leading-relaxed mb-10">
                 Compila il modulo e ti ricontatteremo entro 24 ore. Puoi anche chiamarci o
                 scriverci direttamente — saremo felici di aiutarti.
               </p>
@@ -72,21 +79,21 @@ export default function Contact() {
                       animationDelay: `${i * 80}ms`,
                     }}
                   >
-                    <div className="w-12 h-12 bg-teal-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-teal-50 dark:bg-teal-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
                       <svg className="w-5 h-5 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         {item.icon}
                       </svg>
                     </div>
                     <div>
-                      <p className="font-semibold text-navy-600 text-sm">{item.label}</p>
-                      <p className="text-gray-500 text-sm mt-0.5">{item.value}</p>
+                      <p className="font-semibold text-navy-600 dark:text-white text-sm">{item.label}</p>
+                      <p className="text-gray-500 dark:text-gray-400 text-sm mt-0.5">{item.value}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
               <div className="mt-auto pt-8">
-              <div className="rounded-2xl overflow-hidden border border-gray-100 shadow-sm h-52">
+              <div className="rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-700 shadow-sm h-52">
                 <iframe
                   title="ClearDent - Via Roma 45, Milano"
                   src="https://maps.google.com/maps?q=Via+Roma+45,+20121+Milano,+Italy&output=embed"
@@ -115,8 +122,8 @@ export default function Contact() {
 
           {/* Form — slide from right */}
           <Reveal direction="right" duration={800} delay={100}>
-            <div className="bg-gray-50 rounded-2xl p-8 shadow-sm border border-gray-100">
-              <h3 className="font-serif text-2xl font-semibold text-navy-600 mb-6">
+            <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-700">
+              <h3 className="font-serif text-2xl font-semibold text-navy-600 dark:text-white mb-6">
                 Invia un Messaggio
               </h3>
 
@@ -134,37 +141,37 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1.5">Nome e Cognome *</label>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Nome e Cognome *</label>
                     <input
                       type="text" name="name" value={form.name} onChange={handleChange}
                       required placeholder="Mario Rossi"
-                      className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all bg-white"
+                      className="w-full border border-gray-200 dark:border-gray-600 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all bg-white dark:bg-gray-700 dark:text-gray-200"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1.5">Telefono</label>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Telefono</label>
                     <input
                       type="tel" name="phone" value={form.phone} onChange={handleChange}
                       placeholder="+39 333 000 0000"
-                      className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all bg-white"
+                      className="w-full border border-gray-200 dark:border-gray-600 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all bg-white dark:bg-gray-700 dark:text-gray-200"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">Email *</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Email *</label>
                   <input
                     type="email" name="email" value={form.email} onChange={handleChange}
                     required placeholder="mario@esempio.it"
-                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all bg-white"
+                    className="w-full border border-gray-200 dark:border-gray-600 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all bg-white dark:bg-gray-700 dark:text-gray-200"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">Servizio di Interesse</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Servizio di Interesse</label>
                   <select
                     name="service" value={form.service} onChange={handleChange}
-                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all bg-white text-gray-700"
+                    className="w-full border border-gray-200 dark:border-gray-600 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200"
                   >
                     <option value="">Seleziona un servizio...</option>
                     <option>Igiene e Prevenzione</option>
@@ -178,12 +185,12 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">Messaggio *</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Messaggio *</label>
                   <textarea
                     name="message" value={form.message} onChange={handleChange}
                     required rows={4}
                     placeholder="Descrivici la tua esigenza o il trattamento che ti interessa..."
-                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all bg-white resize-none"
+                    className="w-full border border-gray-200 dark:border-gray-600 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all bg-white dark:bg-gray-700 dark:text-gray-200 resize-none"
                   />
                 </div>
 

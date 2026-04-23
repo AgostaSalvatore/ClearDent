@@ -31,14 +31,14 @@ export default function PatientDashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Header */}
-      <header className="bg-white border-b border-gray-100 px-6 py-4 flex items-center justify-between">
-        <Link to="/" className="font-serif text-xl font-bold text-navy-600">
+      <header className="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700 px-6 py-4 flex items-center justify-between">
+        <Link to="/" className="font-serif text-xl font-bold text-navy-600 dark:text-white">
           Clear<span className="text-teal-500">Dent</span>
         </Link>
         <div className="flex items-center gap-4">
-          <span className="text-sm text-gray-500">Ciao, <span className="font-medium text-navy-600">{user.name}</span></span>
+          <span className="text-sm text-gray-500 dark:text-gray-400">Ciao, <span className="font-medium text-navy-600 dark:text-white">{user.name}</span></span>
           <button onClick={logout} className="text-sm text-gray-400 hover:text-red-500 transition-colors">Esci</button>
         </div>
       </header>
@@ -46,7 +46,7 @@ export default function PatientDashboard() {
       <div className="max-w-4xl mx-auto px-6 py-10 space-y-8">
 
         {/* Profilo */}
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+        <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm p-6">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-lg font-semibold text-navy-600">Il tuo profilo</h2>
             {!editMode
@@ -65,28 +65,28 @@ export default function PatientDashboard() {
                 <div>
                   <label className="block text-sm font-medium text-gray-600 mb-1">Nome</label>
                   <input value={form.name} onChange={e => setForm({ ...form, name: e.target.value })}
-                    className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500" />
+                    className="w-full border border-gray-200 dark:border-gray-600 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 bg-white dark:bg-gray-700 dark:text-gray-200" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-600 mb-1">Telefono</label>
                   <input value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })}
-                    className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500" />
+                    className="w-full border border-gray-200 dark:border-gray-600 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 bg-white dark:bg-gray-700 dark:text-gray-200" />
                 </div>
               </>
             ) : (
               <>
-                <div><p className="text-sm text-gray-500">Nome</p><p className="font-medium text-navy-600">{user.name}</p></div>
-                <div><p className="text-sm text-gray-500">Email</p><p className="font-medium text-navy-600">{user.email}</p></div>
-                <div><p className="text-sm text-gray-500">Telefono</p><p className="font-medium text-navy-600">{user.phone || '—'}</p></div>
-                <div><p className="text-sm text-gray-500">Membro dal</p><p className="font-medium text-navy-600">{new Date(user.created_at).toLocaleDateString('it-IT')}</p></div>
+                <div><p className="text-sm text-gray-500 dark:text-gray-400">Nome</p><p className="font-medium text-navy-600 dark:text-white">{user.name}</p></div>
+                <div><p className="text-sm text-gray-500 dark:text-gray-400">Email</p><p className="font-medium text-navy-600 dark:text-white">{user.email}</p></div>
+                <div><p className="text-sm text-gray-500 dark:text-gray-400">Telefono</p><p className="font-medium text-navy-600 dark:text-white">{user.phone || '—'}</p></div>
+                <div><p className="text-sm text-gray-500 dark:text-gray-400">Membro dal</p><p className="font-medium text-navy-600 dark:text-white">{new Date(user.created_at).toLocaleDateString('it-IT')}</p></div>
               </>
             )}
           </div>
         </div>
 
         {/* Prenotazioni */}
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
-          <h2 className="text-lg font-semibold text-navy-600 mb-6">Le tue richieste</h2>
+        <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm p-6">
+          <h2 className="text-lg font-semibold text-navy-600 dark:text-white mb-6">Le tue richieste</h2>
           {contacts.length === 0 ? (
             <div className="text-center py-10 text-gray-400">
               <p className="mb-4">Nessuna richiesta inviata.</p>
@@ -95,9 +95,9 @@ export default function PatientDashboard() {
           ) : (
             <div className="space-y-4">
               {contacts.map(c => (
-                <div key={c.id} className="border border-gray-100 rounded-xl p-4 flex items-start justify-between gap-4">
+                <div key={c.id} className="border border-gray-100 dark:border-gray-700 rounded-xl p-4 flex items-start justify-between gap-4">
                   <div>
-                    <p className="font-medium text-navy-600">{c.service || 'Richiesta generica'}</p>
+                    <p className="font-medium text-navy-600 dark:text-white">{c.service || 'Richiesta generica'}</p>
                     <p className="text-sm text-gray-500 mt-1">{c.message}</p>
                     <p className="text-xs text-gray-400 mt-2">{new Date(c.created_at).toLocaleDateString('it-IT')}</p>
                   </div>

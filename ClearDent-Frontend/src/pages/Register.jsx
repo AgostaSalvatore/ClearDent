@@ -25,27 +25,27 @@ export default function Register() {
 
   const field = (name, label, type = 'text', placeholder = '') => (
     <div>
-      <label className="block text-sm font-medium text-gray-700 mb-1.5">{label}</label>
+      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">{label}</label>
       <input
         type={type} value={form[name]} placeholder={placeholder}
         onChange={e => setForm({ ...form, [name]: e.target.value })}
-        className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all"
+        className="w-full border border-gray-200 dark:border-gray-600 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all bg-white dark:bg-gray-700 dark:text-gray-200"
       />
       {errors[name] && <p className="text-red-500 text-xs mt-1">{errors[name][0]}</p>}
     </div>
   )
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center px-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <Link to="/" className="font-serif text-2xl font-bold text-navy-600">
+          <Link to="/" className="font-serif text-2xl font-bold text-navy-600 dark:text-white">
             Clear<span className="text-teal-500">Dent</span>
           </Link>
-          <p className="text-gray-500 mt-2">Crea il tuo account</p>
+          <p className="text-gray-500 dark:text-gray-400 mt-2">Crea il tuo account</p>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
+        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-8">
           <form onSubmit={handleSubmit} className="space-y-5">
             {field('name', 'Nome e Cognome *', 'text', 'Mario Rossi')}
             {field('email', 'Email *', 'email', 'mario@esempio.it')}
@@ -61,7 +61,7 @@ export default function Register() {
             </button>
           </form>
 
-          <p className="text-center text-sm text-gray-500 mt-6">
+          <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-6">
             Hai già un account?{' '}
             <Link to="/login" className="text-teal-500 font-medium hover:underline">Accedi</Link>
           </p>

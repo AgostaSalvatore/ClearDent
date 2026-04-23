@@ -42,13 +42,13 @@ function FAQItem({ question, answer }) {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="border border-gray-200 rounded-xl overflow-hidden">
+    <div className="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between px-6 py-5 text-left bg-white hover:bg-gray-50 transition-colors"
+        className="w-full flex items-center justify-between px-6 py-5 text-left bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
       >
-        <span className="font-semibold text-navy-600 pr-4">{question}</span>
-        <span className="flex-shrink-0 w-8 h-8 bg-teal-50 rounded-full flex items-center justify-center text-teal-500 transition-transform duration-300" style={{ transform: open ? 'rotate(45deg)' : 'rotate(0deg)' }}>
+        <span className="font-semibold text-navy-600 dark:text-white pr-4">{question}</span>
+        <span className="flex-shrink-0 w-8 h-8 bg-teal-50 dark:bg-teal-900/30 rounded-full flex items-center justify-center text-teal-500 transition-transform duration-300" style={{ transform: open ? 'rotate(45deg)' : 'rotate(0deg)' }}>
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
           </svg>
@@ -58,7 +58,7 @@ function FAQItem({ question, answer }) {
         className="overflow-hidden transition-all duration-300"
         style={{ maxHeight: open ? '300px' : '0px' }}
       >
-        <p className="px-6 pb-5 text-gray-500 leading-relaxed border-t border-gray-100 pt-4">
+        <p className="px-6 pb-5 text-gray-500 dark:text-gray-400 leading-relaxed border-t border-gray-100 dark:border-gray-700 pt-4 bg-white dark:bg-gray-800">
           {answer}
         </p>
       </div>
@@ -68,12 +68,12 @@ function FAQItem({ question, answer }) {
 
 export default function FAQ() {
   return (
-    <section id="faq" className="py-24 bg-gray-50">
+    <section id="faq" className="py-24 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-3xl mx-auto px-6">
         <div className="text-center mb-14">
           <p className="section-subtitle">Hai dei dubbi?</p>
           <h2 className="section-title">Domande Frequenti</h2>
-          <p className="text-gray-500 mt-4">
+          <p className="text-gray-500 dark:text-gray-400 mt-4">
             Rispondiamo alle domande più comuni dei nostri pazienti. Non trovi quello che cerchi?{' '}
             <a href="#contatti" className="text-teal-500 font-medium hover:underline">
               Contattaci

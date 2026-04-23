@@ -18,6 +18,8 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::get('/contacts', [ContactController::class, 'index']);
     Route::patch('/contacts/{contact}', [ContactController::class, 'update']);
+    Route::delete('/contacts/{contact}', [ContactController::class, 'destroy']);
+    Route::get('/doctors', [ContactController::class, 'doctors']);
 
     // Owner only
     Route::get('/users', [UserController::class, 'index']);

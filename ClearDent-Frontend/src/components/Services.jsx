@@ -59,12 +59,12 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="servizi" className="py-24 bg-gray-50">
+    <section id="servizi" className="py-24 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-6">
         <Reveal className="text-center mb-16">
           <p className="section-subtitle">Cosa offriamo</p>
           <h2 className="section-title">I Nostri Servizi</h2>
-          <p className="text-gray-500 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
             Dal controllo di routine alla chirurgia avanzata, offriamo una gamma completa di
             trattamenti dentali con le tecnologie più moderne.
           </p>
@@ -73,12 +73,12 @@ export default function Services() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((s, i) => (
             <Reveal key={s.title} delay={i * 80} direction="up">
-              <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100 hover:border-teal-100 h-full">
-                <div className="w-16 h-16 bg-teal-50 rounded-2xl flex items-center justify-center text-teal-500 mb-6 group-hover:bg-teal-500 group-hover:text-white transition-all duration-300">
+              <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100 dark:border-gray-700 hover:border-teal-100 dark:hover:border-teal-800 h-full">
+                <div className="w-16 h-16 bg-teal-50 dark:bg-teal-900/30 rounded-2xl flex items-center justify-center text-teal-500 mb-6 group-hover:bg-teal-500 group-hover:text-white transition-all duration-300">
                   {s.icon}
                 </div>
-                <h3 className="font-serif text-xl font-semibold text-navy-600 mb-3">{s.title}</h3>
-                <p className="text-gray-500 leading-relaxed text-sm">{s.desc}</p>
+                <h3 className="font-serif text-xl font-semibold text-navy-600 dark:text-white mb-3">{s.title}</h3>
+                <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-sm">{s.desc}</p>
               </div>
             </Reveal>
           ))}
