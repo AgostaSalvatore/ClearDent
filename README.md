@@ -1,4 +1,4 @@
-no# 🦷 ClearDent — Sito Studio Dentistico
+🦷 ClearDent — Sito Studio Dentistico
 
 Sito web professionale per uno studio dentistico, costruito come progetto di vibe coding.
 
