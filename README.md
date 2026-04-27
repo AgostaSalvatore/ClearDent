@@ -26,23 +26,6 @@ E:\Dev\ClearDent\
 
 ---
 
-## Come avviare in locale
-
-### Frontend
-```bash
-cd ClearDent-Frontend
-npm run dev
-```
-Apri → http://localhost:5173
-
-### Backend
-Nessun comando necessario — **Herd serve automaticamente** il backend su:
-```
-http://cleardent-backend.test
-```
-
----
-
 ## Sezioni del sito
 
 - **Hero** — immagine di copertina con headline e CTA
@@ -60,14 +43,6 @@ Quando un utente compila il form:
 
 ```
 Utente → Form → Laravel API → n8n Webhook → Telegram Bot → Messaggio su Telegram
-```
-
-### Configurazione
-
-Nel file `ClearDent-Backend/.env`:
-
-```env
-N8N_WEBHOOK_URL=https://turix.app.n8n.cloud/webhook/cleardent-contact
 ```
 
 Il bot Telegram **@Cleardentbot** invia una notifica con i dati del contatto.
